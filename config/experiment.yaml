@@ -3,3 +3,9 @@ random_seed: 42
 experiment_dataset_size: 208
 
 pilot_ratio: 0.20
+
+llm:
+  provider: gemini
+  model: gemini-2.5-flash
+  temperature: 0.0
+  max_output_tokens: 2048
