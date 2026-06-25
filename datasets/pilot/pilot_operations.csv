@@ -1,0 +1,151 @@
+operation_uid,api_name,method,path,operation_id,summary,description,parameters_count,has_request_body,response_codes,source_file,selected_for_experiment,selected_for_pilot
+sendgrid_GET_mail_settings_forward_bounce,sendgrid,GET,/mail_settings/forward_bounce,GET_mail_settings-forward_bounce,Retrieve forward bounce mail settings,"**This endpoint allows you to retrieve your current bounce forwarding mail settings.**
+
+Enabling the Forward Bounce setting allows you to specify `email` addresses to which bounce reports will be forwarded. This endpoint returns the email address you have set to receive forwarded bounces and an `enabled` status indicating if the setting is active.",1,False,200|400|401|403|404|500,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_scopes,sendgrid,GET,/scopes,GET_scopes,Retrieve a list of scopes for which this user has access.,"**This endpoint returns a list of all scopes that this user has access to.**
+
+API Keys are used to authenticate with [SendGrid's v3 API](https://sendgrid.api-docs.io/v3.0/how-to-use-the-sendgrid-v3-api/api-authorization).
+
+API Keys may be assigned certain permissions, or scopes, that limit which API endpoints they are able to access.
+
+This endpoint returns all the scopes assigned to the key you use to authenticate with it. To retrieve the scopes assigned to another key, you can pass an API key ID to the ""Retrieve an existing API key"" endpoint.
+
+For a more detailed explanation of how you can use API Key permissions, please visit our [API Keys documentation](https://sendgrid.com/docs/ui/account-and-settings/api-keys/).",1,False,200|401|403|404|500,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_POST_senders_sender_id_resend_verification,sendgrid,POST,/senders/{sender_id}/resend_verification,POST_v3-senders-sender_id-resend_verification,Resend Sender Identity Verification,**This enpdoint allows you to resend a sender identity verification email.**,1,False,204|400|404,datasets\openapi\sendgrid\openapi.json,True,True
+spotify_DELETE_playlists_playlist_id_tracks,spotify,DELETE,/playlists/{playlist_id}/tracks,remove-tracks-playlist,"Remove Playlist Items
+","Remove one or more items from a user's playlist.
+",1,True,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+sendgrid_POST_validations_email,sendgrid,POST,/validations/email,POST_validations-email,Validate an email,**This endpoint allows you to validate an email address.**,0,True,200,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_campaigns_campaign_id_schedules,sendgrid,GET,/campaigns/{campaign_id}/schedules,GET_campaigns-campaign_id-schedules,View Scheduled Time of a Campaign,**This endpoint allows you to retrieve the date and time that a campaign has been scheduled to be sent.**,1,False,200|404,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_marketing_contacts,sendgrid,GET,/marketing/contacts,GET_mc-contats,Get Sample Contacts,"**This endpoint will return up to 50 of the most recent contacts uploaded or attached to a list**. 
+
+This list will then be sorted by email address.
+
+The full contact count is also returned.
+
+Please note that pagination of the contacts has been deprecated.
+
+Twilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.",0,False,200|400|401|403|404|500,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_sso_integrations_integration_id_certificates,sendgrid,GET,/sso/integrations/{integration_id}/certificates,GET_sso-integrations-integration_id-certificates,Get All SSO Certificates by Integration,"**This endpoint allows you to retrieve all your IdP configurations by configuration ID.**
+
+The `integration_id` expected by this endpoint is the `id` returned in the response by the ""Get All SSO Integrations"" endpoint.",0,False,200|400|401|403|429|500,datasets\openapi\sendgrid\openapi.json,True,True
+spotify_GET_me_following_contains,spotify,GET,/me/following/contains,check-current-user-follows,"Check If User Follows Artists or Users
+","Check to see if the current user is following one or more artists or other Spotify users.
+",2,False,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+spotify_GET_browse_categories_category_id_playlists,spotify,GET,/browse/categories/{category_id}/playlists,get-a-categories-playlists,"Get Category's Playlists
+","Get a list of Spotify playlists tagged with a particular category.
+",4,False,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+sendgrid_DELETE_templates_template_id_versions_version_id,sendgrid,DELETE,/templates/{template_id}/versions/{version_id},DELETE_templates-template_id-versions-version_id,Delete a transactional template version.,**This endpoint allows you to delete a transactional template version.**,1,False,204,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_DELETE_campaigns_campaign_id_schedules,sendgrid,DELETE,/campaigns/{campaign_id}/schedules,DELETE_campaigns-campaign_id-schedules,Unschedule a Scheduled Campaign,"**This endpoint allows you to unschedule a campaign that has already been scheduled to be sent.**
+
+A successful unschedule will return a 204.
+If the specified campaign is in the process of being sent, the only option is to cancel (a different method).",1,False,204|403|404,datasets\openapi\sendgrid\openapi.json,True,True
+spotify_GET_albums_id,spotify,GET,/albums/{id},get-an-album,"Get Album
+","Get Spotify catalog information for a single album.
+",2,False,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+spotify_GET_me_shows,spotify,GET,/me/shows,get-users-saved-shows,"Get User's Saved Shows
+","Get a list of shows saved in the current Spotify user's library. Optional parameters can be used to limit the number of shows returned.
+",2,False,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+sendgrid_DELETE_senders_sender_id,sendgrid,DELETE,/senders/{sender_id},DELETE_v3-senders-sender_id,Delete a Sender Identity,**This endoint allows you to delete one of your sender identities.**,1,False,204|403|404,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_whitelabel_domains_subuser,sendgrid,GET,/whitelabel/domains/subuser,GET_whitelabel-domains-subuser,List the authenticated domain associated with the given user.,"**This endpoint allows you to retrieve all of the authenticated domains that have been assigned to a specific subuser.**
+
+Authenticated domains can be associated with (i.e. assigned to) subusers from a parent account. This functionality allows subusers to send mail using their parent's domain authentication. To associate an authenticated domain with a subuser, the parent account must first authenticate and validate the domain. The parent may then associate the authenticated domain via the subuser management tools.",1,False,200,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_DELETE_ips_warmup_ip_address,sendgrid,DELETE,/ips/warmup/{ip_address},DELETE_ips-warmup-ip_address,Stop warming up an IP address,"**This endpoint allows you to remove an IP address from warmup mode.**
+
+Your request will return a 204 status code if the specified IP was successfully removed from warmup mode. To retrieve details of the IP’s warmup status *before* removing it from warmup mode, call the  ""Retrieve the warmpup status for a specific IP address"" endpoint.",0,False,204|404,datasets\openapi\sendgrid\openapi.json,True,True
+spotify_DELETE_me_shows,spotify,DELETE,/me/shows,remove-shows-user,"Remove User's Saved Shows
+","Delete one or more shows from current Spotify user's library.
+",2,False,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+spotify_PUT_me_player_play,spotify,PUT,/me/player/play,start-a-users-playback,"Start/Resume Playback
+","Start a new context or resume current playback on the user's active device.
+",1,True,204|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+sendgrid_PUT_ips_pools_pool_name,sendgrid,PUT,/ips/pools/{pool_name},PUT_ips-pools-pool_name,Rename an IP pool,**This endpoint allows you to update the name of an IP pool.**,0,True,200|404,datasets\openapi\sendgrid\openapi.json,True,True
+spotify_GET_shows_id_episodes,spotify,GET,/shows/{id}/episodes,get-a-shows-episodes,"Get Show Episodes
+","Get Spotify catalog information about an show’s episodes. Optional parameters can be used to limit the number of episodes returned.
+",4,False,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+sendgrid_POST_marketing_contacts_batch,sendgrid,POST,/marketing/contacts/batch,POST_marketing-contacts-batch,Get Batched Contacts by IDs,"**This endpoint is used to retrieve a set of contacts identified by their IDs.**
+
+This can be more efficient endpoint to get contacts than making a series of individual `GET` requests to the ""Get a Contact by ID"" endpoint.
+
+You can supply up to 100 IDs. Pass them into the `ids` field in your request body as an array or one or more strings.
+
+Twilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.",0,True,200|401|403|404|500,datasets\openapi\sendgrid\openapi.json,True,True
+spotify_PUT_me_player,spotify,PUT,/me/player,transfer-a-users-playback,"Transfer Playback
+","Transfer playback to a new device and determine if it should start playing.
+",0,True,204|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+spotify_GET_browse_categories_category_id,spotify,GET,/browse/categories/{category_id},get-a-category,"Get Single Browse Category
+","Get a single category used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).
+",3,False,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+sendgrid_PATCH_user_webhooks_event_settings_signed,sendgrid,PATCH,/user/webhooks/event/settings/signed,PATCH_user-webhooks-event-settings-signed,Enable/Disable Signed Webhook,"**This endpoint allows you to enable or disable signing of the Event Webhook.**
+
+This endpoint takes a single boolean request parameter, `enabled`. You may either enable or disable signing of the Event Webhook using this endpoint. Once enabled, you can retrieve your public key using the `/webhooks/event/settings/signed` endpoint.
+
+For more information about cryptographically signing the Event Webhook, see [Getting Started with the Event Webhook Security Features](https://sendgrid.com/docs/for-developers/tracking-events/getting-started-event-webhook-security-features).",1,True,200|400|401|500,datasets\openapi\sendgrid\openapi.json,True,True
+spotify_GET_me_episodes_contains,spotify,GET,/me/episodes/contains,check-users-saved-episodes,"Check User's Saved Episodes
+","Check if one or more episodes is already saved in the current Spotify user's 'Your Episodes' library.
+",1,False,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+sendgrid_GET_marketing_lists_id,sendgrid,GET,/marketing/lists/{id},GET_mc-lists-id,Get a List by ID,"**This endpoint returns data about a specific list.**
+
+Setting the optional parameter `contact_sample=true` returns the `contact_sample` in the response body. Up to fifty of the most recent contacts uploaded or attached to a list will be returned, sorted alphabetically, by email address.
+
+The full contact count is also returned.",1,False,200|404,datasets\openapi\sendgrid\openapi.json,True,True
+spotify_GET_recommendations_available_genre_seeds,spotify,GET,/recommendations/available-genre-seeds,get-recommendation-genres,"Get Available Genre Seeds
+","Retrieve a list of available genres seed parameter values for [recommendations](/documentation/web-api/reference/#/operations/get-recommendations).
+",0,False,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+sendgrid_DELETE_suppression_invalid_emails,sendgrid,DELETE,/suppression/invalid_emails,DELETE_suppression-invalid_emails,Delete invalid emails,"**This endpoint allows you to remove email addresses from your invalid email address list.**
+
+There are two options for deleting invalid email addresses: 
+
+1) You can delete all invalid email addresses by setting `delete_all` to true in the request body.
+2) You can delete some invalid email addresses by specifying certain addresses in an array in the request body.",1,True,204,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_whitelabel_domains_domain_id,sendgrid,GET,/whitelabel/domains/{domain_id},GET_whitelabel-domains-domain_id,Retrieve an authenticated domain,**This endpoint allows you to retrieve a specific authenticated domain.**,1,False,200,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_api_keys_api_key_id,sendgrid,GET,/api_keys/{api_key_id},GET_api_keys-api_key_id,Retrieve an existing API Key,"**This endpoint allows you to retrieve a single API key using an `api_key_id`.**
+
+The endpoint will return a key's name, ID, and scopes. If the API Key ID does not, exist a `404` status will be returned.
+
+See the [API Key Permissions List](https://sendgrid.api-docs.io/v3.0/how-to-use-the-sendgrid-v3-api/api-authorization) for all available scopes. An API key's scopes can be updated after creation using the ""Update API keys"" endpoint.",1,False,200|400|401|403|404|500,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_DELETE_teammates_username,sendgrid,DELETE,/teammates/{username},DELETE_v3-teammates-username,Delete teammate,"**This endpoint allows you to delete a teammate.**
+
+**Only the parent user or an admin teammate can delete another teammate.**",1,False,204|404,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_partner_settings_new_relic,sendgrid,GET,/partner_settings/new_relic,GET_partner_settings-new_relic,Returns all New Relic partner settings.,"**This endpoint allows you to retrieve your current New Relic partner settings.**
+
+Our partner settings allow you to integrate your SendGrid account with our partners to increase your SendGrid experience and functionality. For more information about our partners, and how you can begin integrating with them, please visit our [Partners documentation](https://sendgrid.com/docs/ui/account-and-settings/partners/).
+
+By integrating with New Relic, you can send your SendGrid email statistics to your New Relic Dashboard. If you enable this setting, your stats will be sent to New Relic every 5 minutes. You will need your New Relic License Key to enable this setting. For more information, please see our [SendGrid for New Relic documentation](https://sendgrid.com/docs/ui/analytics-and-reporting/tracking-stats-using-new-relic/).",1,False,200,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_POST_messages_download,sendgrid,POST,/messages/download,POST_v3-messages-download,Request CSV,"This is BETA functionality. You may not have access, and we reserve the right to change functionality without notice.
+
+This request will kick off a backend process to generate a CSV file. Once generated, the worker will then send an email for the user download the file. The link will expire in 3 days.
+
+The CSV fill contain the last 1 million messages. This endpoint will be rate limited to 1 request every 12 hours (rate limit may change).
+
+This endpoint is similar to the GET Single Message endpoint - the only difference is that /download is added to indicate that this is a CSV download requests but the same query is used to determine what the CSV should contain.",2,False,202|400|429|500,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_subusers_reputations,sendgrid,GET,/subusers/reputations,GET_subusers-reputations,Retrieve Subuser Reputations,"**This endpoint allows you to request the reputations for your subusers.**
+
+Subuser sender reputations give a good idea how well a sender is doing with regards to how recipients and recipient servers react to the mail that is being received. When a bounce, spam report, or other negative action happens on a sent email, it will affect your sender rating.",1,False,200,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_PUT_user_password,sendgrid,PUT,/user/password,PUT_user-password,Update your password,**This endpoint allows you to update your password.**,1,True,200,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_marketing_contacts_imports_id,sendgrid,GET,/marketing/contacts/imports/{id},GET_marketing-contacts-imports-id,Import Contacts Status,"**This endpoint can be used to check the status of a contact import job**. 
+
+Use the `job_id` from the ""Import Contacts,"" ""Add or Update a Contact,"" or ""Delete Contacts"" endpoints as the `id` in the path parameter.
+
+If there is an error with your `PUT` request, download the `errors_url` file and open it to view more details.
+
+The job `status` field indicates whether the job is `pending`, `completed`, `errored`, or `failed`. 
+
+Pending means not started. Completed means finished without any errors. Errored means finished with some errors. Failed means finshed with all errors, or the job was entirely unprocessable: for example, if you attempt to import file format we do not support.
+
+The `results` object will have fields depending on the job type.
+
+Twilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.",0,False,200|400|401|403|404|500,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_stats,sendgrid,GET,/stats,GET_stats,Retrieve global email statistics,"**This endpoint allows you to retrieve all of your global email statistics between a given date range.**
+
+Parent accounts will see aggregated stats for their account and all subuser accounts. Subuser accounts will only see their own stats.",6,False,200,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_DELETE_ips_pools_pool_name,sendgrid,DELETE,/ips/pools/{pool_name},DELETE_ips-pools-pool_name,Delete an IP pool,**This endpoint allows you to delete an IP pool.**,0,False,204|404,datasets\openapi\sendgrid\openapi.json,True,True
+sendgrid_GET_mailbox_providers_stats,sendgrid,GET,/mailbox_providers/stats,GET_mailbox_providers-stats,Retrieve email statistics by mailbox provider.,"**This endpoint allows you to retrieve your email statistics segmented by recipient mailbox provider.**
+
+**We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.
+
+Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).",7,False,200,datasets\openapi\sendgrid\openapi.json,True,True
+spotify_DELETE_me_episodes,spotify,DELETE,/me/episodes,remove-episodes-user,"Remove User's Saved Episodes
+","Remove one or more episodes from the current user's library.
+",1,True,200|401|403|429,datasets\openapi\spotify\openapi.json,True,True
+sendgrid_GET_ips_pools,sendgrid,GET,/ips/pools,GET_ips-pools,Retrieve all IP pools,**This endpoint allows you to get all of your IP pools.**,0,False,200,datasets\openapi\sendgrid\openapi.json,True,True

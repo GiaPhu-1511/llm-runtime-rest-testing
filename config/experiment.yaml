@@ -1,0 +1,5 @@
+random_seed: 42
+
+experiment_dataset_size: 208
+
+pilot_ratio: 0.20
