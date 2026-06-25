@@ -9,3 +9,9 @@ llm:
   model: gemini-2.5-flash
   temperature: 0.0
   max_output_tokens: 2048
+
+apis:
+  sendgrid:
+    base_url: https://api.sendgrid.com/v3
+  spotify:
+    base_url: https://api.spotify.com/v1

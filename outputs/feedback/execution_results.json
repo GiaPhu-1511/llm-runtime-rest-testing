@@ -1,0 +1,35 @@
+[
+  {
+    "operation_uid": "sendgrid_GET_mail_settings_forward_bounce",
+    "method": "GET",
+    "url": "https://api.sendgrid.com/v3/mail_settings/forward_bounce",
+    "expected_status": 401,
+    "actual_status": 401,
+    "response_time_ms": 694.18,
+    "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}",
+    "success": true,
+    "error": null
+  },
+  {
+    "operation_uid": "sendgrid_GET_scopes",
+    "method": "GET",
+    "url": "https://api.sendgrid.com/v3/scopes",
+    "expected_status": 401,
+    "actual_status": 401,
+    "response_time_ms": 631.0,
+    "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}",
+    "success": true,
+    "error": null
+  },
+  {
+    "operation_uid": "sendgrid_POST_senders_sender_id_resend_verification",
+    "method": "POST",
+    "url": "https://api.sendgrid.com/v3/senders/12345/resend_verification",
+    "expected_status": 401,
+    "actual_status": 401,
+    "response_time_ms": 630.71,
+    "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}",
+    "success": true,
+    "error": null
+  }
+]
