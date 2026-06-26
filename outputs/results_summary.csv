@@ -1,8 +1,9 @@
-metric,baseline,feedback
-total_cases,42,
-success_count,0,14
-success_rate,0.0,0.3333333333333333
-improvement_rate,,0.3333333333333333
-average_response_time_ms,686.1771428571428,630.4002380952381
-status_code_401,39,28
-status_code_403,3,14
+metric,value
+total_operations,42
+covered_operations,42
+endpoint_coverage_rate,1.0
+fault_candidates_count,42
+fault_candidate_rate,0.5
+baseline_status_match_rate,0.0
+feedback_status_match_rate,0.3333333333333333
+status_match_improvement,0.3333333333333333

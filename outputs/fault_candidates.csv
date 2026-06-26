@@ -1,0 +1,43 @@
+operation_uid,method,path,documented_response_codes,actual_status,response_body_preview,source_phase
+sendgrid_POST_senders_sender_id_resend_verification,POST,/senders/{sender_id}/resend_verification,204|400|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_POST_validations_email,POST,/validations/email,200,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_GET_campaigns_campaign_id_schedules,GET,/campaigns/{campaign_id}/schedules,200|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_DELETE_templates_template_id_versions_version_id,DELETE,/templates/{template_id}/versions/{version_id},204,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_DELETE_campaigns_campaign_id_schedules,DELETE,/campaigns/{campaign_id}/schedules,204|403|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_DELETE_senders_sender_id,DELETE,/senders/{sender_id},204|403|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_GET_whitelabel_domains_subuser,GET,/whitelabel/domains/subuser,200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",baseline
+sendgrid_DELETE_ips_warmup_ip_address,DELETE,/ips/warmup/{ip_address},204|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_PUT_ips_pools_pool_name,PUT,/ips/pools/{pool_name},200|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_GET_marketing_lists_id,GET,/marketing/lists/{id},200|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_DELETE_suppression_invalid_emails,DELETE,/suppression/invalid_emails,204,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_GET_whitelabel_domains_domain_id,GET,/whitelabel/domains/{domain_id},200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",baseline
+sendgrid_DELETE_teammates_username,DELETE,/teammates/{username},204|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_GET_partner_settings_new_relic,GET,/partner_settings/new_relic,200,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_POST_messages_download,POST,/messages/download,202|400|429|500,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_GET_subusers_reputations,GET,/subusers/reputations,200,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_PUT_user_password,PUT,/user/password,200,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_GET_stats,GET,/stats,200,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_DELETE_ips_pools_pool_name,DELETE,/ips/pools/{pool_name},204|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_GET_mailbox_providers_stats,GET,/mailbox_providers/stats,200,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_GET_ips_pools,GET,/ips/pools,200,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",baseline
+sendgrid_POST_senders_sender_id_resend_verification,POST,/senders/{sender_id}/resend_verification,204|400|404,401,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",feedback
+sendgrid_POST_validations_email,POST,/validations/email,200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_GET_campaigns_campaign_id_schedules,GET,/campaigns/{campaign_id}/schedules,200|404,401,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",feedback
+sendgrid_DELETE_templates_template_id_versions_version_id,DELETE,/templates/{template_id}/versions/{version_id},204,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_DELETE_campaigns_campaign_id_schedules,DELETE,/campaigns/{campaign_id}/schedules,204|403|404,401,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",feedback
+sendgrid_DELETE_senders_sender_id,DELETE,/senders/{sender_id},204|403|404,401,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",feedback
+sendgrid_GET_whitelabel_domains_subuser,GET,/whitelabel/domains/subuser,200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_DELETE_ips_warmup_ip_address,DELETE,/ips/warmup/{ip_address},204|404,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_PUT_ips_pools_pool_name,PUT,/ips/pools/{pool_name},200|404,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",feedback
+sendgrid_GET_marketing_lists_id,GET,/marketing/lists/{id},200|404,401,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",feedback
+sendgrid_DELETE_suppression_invalid_emails,DELETE,/suppression/invalid_emails,204,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",feedback
+sendgrid_GET_whitelabel_domains_domain_id,GET,/whitelabel/domains/{domain_id},200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_DELETE_teammates_username,DELETE,/teammates/{username},204|404,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_GET_partner_settings_new_relic,GET,/partner_settings/new_relic,200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_POST_messages_download,POST,/messages/download,202|400|429|500,401,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",feedback
+sendgrid_GET_subusers_reputations,GET,/subusers/reputations,200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_PUT_user_password,PUT,/user/password,200,401,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",feedback
+sendgrid_GET_stats,GET,/stats,200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_DELETE_ips_pools_pool_name,DELETE,/ips/pools/{pool_name},204|404,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_GET_mailbox_providers_stats,GET,/mailbox_providers/stats,200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
+sendgrid_GET_ips_pools,GET,/ips/pools,200,403,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",feedback
