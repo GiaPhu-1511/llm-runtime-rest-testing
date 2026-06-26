@@ -6,7 +6,7 @@
   "feedback_success_rate": 0.3333333333333333,
   "improvement_rate": 0.3333333333333333,
   "average_response_time_baseline": 686.1771428571428,
-  "average_response_time_feedback": 634.6130952380952,
+  "average_response_time_feedback": 630.4002380952381,
   "status_code_distribution_baseline": {
     "401": 39,
     "403": 3

@@ -42,8 +42,14 @@ Runtime feedback:
 
 Guidelines:
 - Use the runtime feedback to improve the test.
-- Preserve the generated request structure, path, parameters, headers, and body unless the runtime feedback clearly shows they are invalid.
-- Only adjust the expected status and test_intent when appropriate.
+- The runtime execution result is the ground truth.
+- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.
+- Preserve method, path, parameters and body whenever possible.
+- Only modify:
+  - expected_status
+  - test_intent
+  - headers (if authentication is needed)
+- Do NOT keep the previous expected_status if it contradicts runtime feedback.
 - If actual_status is 401, the refined test should expect 401.
 - If actual_status is 403, the refined test should expect 403.
 - If actual_status is another documented status code for this operation, prefer that actual status.

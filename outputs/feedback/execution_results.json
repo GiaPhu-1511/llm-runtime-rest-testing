@@ -5,7 +5,7 @@
     "url": "https://api.sendgrid.com/v3/mail_settings/forward_bounce",
     "expected_status": 200,
     "actual_status": 403,
-    "response_time_ms": 825.71,
+    "response_time_ms": 773.46,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -16,7 +16,7 @@
     "url": "https://api.sendgrid.com/v3/scopes",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 667.4,
+    "response_time_ms": 800.92,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": true,
     "error": null
@@ -27,7 +27,7 @@
     "url": "https://api.sendgrid.com/v3/senders/1234567890/resend_verification",
     "expected_status": 204,
     "actual_status": 401,
-    "response_time_ms": 759.78,
+    "response_time_ms": 642.54,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": false,
     "error": null
@@ -38,7 +38,7 @@
     "url": "https://api.spotify.com/v1/playlists/12345/tracks",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 573.36,
+    "response_time_ms": 606.99,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": true,
     "error": null
@@ -49,7 +49,7 @@
     "url": "https://api.sendgrid.com/v3/validations/email",
     "expected_status": 200,
     "actual_status": 403,
-    "response_time_ms": 663.74,
+    "response_time_ms": 652.83,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -60,7 +60,7 @@
     "url": "https://api.sendgrid.com/v3/campaigns/12345/schedules",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 610.06,
+    "response_time_ms": 716.6,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": false,
     "error": null
@@ -71,7 +71,7 @@
     "url": "https://api.sendgrid.com/v3/marketing/contacts",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 606.82,
+    "response_time_ms": 757.98,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": false,
     "error": null
@@ -82,7 +82,7 @@
     "url": "https://api.sendgrid.com/v3/sso/integrations/12345/certificates",
     "expected_status": 401,
     "actual_status": 403,
-    "response_time_ms": 701.92,
+    "response_time_ms": 651.76,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -93,7 +93,7 @@
     "url": "https://api.spotify.com/v1/me/following/contains",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 688.16,
+    "response_time_ms": 506.8,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": false,
     "error": null
@@ -104,7 +104,7 @@
     "url": "https://api.spotify.com/v1/browse/categories/us-music/playlists",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 844.05,
+    "response_time_ms": 490.64,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": false,
     "error": null
@@ -115,7 +115,7 @@
     "url": "https://api.sendgrid.com/v3/templates/1234567890/versions/1",
     "expected_status": 401,
     "actual_status": 403,
-    "response_time_ms": 704.42,
+    "response_time_ms": 601.42,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -126,7 +126,7 @@
     "url": "https://api.sendgrid.com/v3/campaigns/12345/schedules",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 932.63,
+    "response_time_ms": 645.22,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": true,
     "error": null
@@ -137,7 +137,7 @@
     "url": "https://api.spotify.com/v1/albums/6Mw9ZgD5JGxS",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 506.75,
+    "response_time_ms": 609.0,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": false,
     "error": null
@@ -148,7 +148,7 @@
     "url": "https://api.spotify.com/v1/me/shows",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 487.36,
+    "response_time_ms": 449.79,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": false,
     "error": null
@@ -159,7 +159,7 @@
     "url": "https://api.sendgrid.com/v3/senders/12345",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 694.98,
+    "response_time_ms": 621.07,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": true,
     "error": null
@@ -170,7 +170,7 @@
     "url": "https://api.sendgrid.com/v3/whitelabel/domains/subuser",
     "expected_status": 401,
     "actual_status": 403,
-    "response_time_ms": 662.57,
+    "response_time_ms": 700.18,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -181,7 +181,7 @@
     "url": "https://api.sendgrid.com/v3/ips/warmup/123.456.789.012",
     "expected_status": 401,
     "actual_status": 403,
-    "response_time_ms": 604.04,
+    "response_time_ms": 618.35,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -192,7 +192,7 @@
     "url": "https://api.spotify.com/v1/me/shows",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 481.47,
+    "response_time_ms": 516.08,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": true,
     "error": null
@@ -203,7 +203,7 @@
     "url": "https://api.spotify.com/v1/me/player/play",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 550.99,
+    "response_time_ms": 460.17,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": true,
     "error": null
@@ -214,7 +214,7 @@
     "url": "https://api.sendgrid.com/v3/ips/pools/test_pool",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 629.53,
+    "response_time_ms": 683.55,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}",
     "success": true,
     "error": null
@@ -225,7 +225,7 @@
     "url": "https://api.spotify.com/v1/shows/1234567890/episodes",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 446.83,
+    "response_time_ms": 490.2,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": false,
     "error": null
@@ -236,7 +236,7 @@
     "url": "https://api.sendgrid.com/v3/marketing/contacts/batch",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 630.32,
+    "response_time_ms": 875.2,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}",
     "success": true,
     "error": null
@@ -247,7 +247,7 @@
     "url": "https://api.spotify.com/v1/me/player",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 510.71,
+    "response_time_ms": 509.58,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": true,
     "error": null
@@ -258,7 +258,7 @@
     "url": "https://api.spotify.com/v1/browse/categories/us",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 448.44,
+    "response_time_ms": 467.05,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": false,
     "error": null
@@ -269,7 +269,7 @@
     "url": "https://api.sendgrid.com/v3/user/webhooks/event/settings/signed",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 600.29,
+    "response_time_ms": 612.61,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}",
     "success": true,
     "error": null
@@ -280,7 +280,7 @@
     "url": "https://api.spotify.com/v1/me/episodes/contains",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 475.4,
+    "response_time_ms": 534.33,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": false,
     "error": null
@@ -291,7 +291,7 @@
     "url": "https://api.sendgrid.com/v3/marketing/lists/12345",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 723.96,
+    "response_time_ms": 663.32,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": false,
     "error": null
@@ -302,7 +302,7 @@
     "url": "https://api.spotify.com/v1/recommendations/available-genre-seeds",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 483.61,
+    "response_time_ms": 479.72,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": false,
     "error": null
@@ -313,7 +313,7 @@
     "url": "https://api.sendgrid.com/v3/suppression/invalid_emails",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 662.4,
+    "response_time_ms": 614.78,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}",
     "success": true,
     "error": null
@@ -324,7 +324,7 @@
     "url": "https://api.sendgrid.com/v3/whitelabel/domains/valid_domain_id",
     "expected_status": 401,
     "actual_status": 403,
-    "response_time_ms": 598.41,
+    "response_time_ms": 693.18,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -335,7 +335,7 @@
     "url": "https://api.sendgrid.com/v3/api_keys/12345",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 630.87,
+    "response_time_ms": 933.94,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": true,
     "error": null
@@ -346,7 +346,7 @@
     "url": "https://api.sendgrid.com/v3/teammates/johndoe",
     "expected_status": 204,
     "actual_status": 403,
-    "response_time_ms": 672.1,
+    "response_time_ms": 668.09,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -357,7 +357,7 @@
     "url": "https://api.sendgrid.com/v3/partner_settings/new_relic",
     "expected_status": 200,
     "actual_status": 403,
-    "response_time_ms": 698.83,
+    "response_time_ms": 650.51,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -368,7 +368,7 @@
     "url": "https://api.sendgrid.com/v3/messages/download",
     "expected_status": 202,
     "actual_status": 401,
-    "response_time_ms": 628.29,
+    "response_time_ms": 740.21,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": false,
     "error": null
@@ -379,7 +379,7 @@
     "url": "https://api.sendgrid.com/v3/subusers/reputations",
     "expected_status": 200,
     "actual_status": 403,
-    "response_time_ms": 651.39,
+    "response_time_ms": 657.64,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -390,7 +390,7 @@
     "url": "https://api.sendgrid.com/v3/user/password",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 593.98,
+    "response_time_ms": 633.55,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}",
     "success": true,
     "error": null
@@ -401,7 +401,7 @@
     "url": "https://api.sendgrid.com/v3/marketing/contacts/imports/{id}",
     "expected_status": 200,
     "actual_status": 401,
-    "response_time_ms": 628.24,
+    "response_time_ms": 746.45,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}",
     "success": false,
     "error": null
@@ -412,7 +412,7 @@
     "url": "https://api.sendgrid.com/v3/stats",
     "expected_status": 200,
     "actual_status": 403,
-    "response_time_ms": 671.59,
+    "response_time_ms": 628.23,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -423,7 +423,7 @@
     "url": "https://api.sendgrid.com/v3/ips/pools/test_pool",
     "expected_status": 204,
     "actual_status": 403,
-    "response_time_ms": 704.68,
+    "response_time_ms": 585.14,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -434,7 +434,7 @@
     "url": "https://api.sendgrid.com/v3/mailbox_providers/stats",
     "expected_status": 200,
     "actual_status": 403,
-    "response_time_ms": 682.68,
+    "response_time_ms": 645.0,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
@@ -445,7 +445,7 @@
     "url": "https://api.spotify.com/v1/me/episodes",
     "expected_status": 401,
     "actual_status": 401,
-    "response_time_ms": 541.85,
+    "response_time_ms": 516.91,
     "response_body_preview": "{\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}",
     "success": true,
     "error": null
@@ -456,7 +456,7 @@
     "url": "https://api.sendgrid.com/v3/ips/pools",
     "expected_status": 200,
     "actual_status": 403,
-    "response_time_ms": 773.14,
+    "response_time_ms": 625.82,
     "response_body_preview": "{\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}",
     "success": false,
     "error": null
