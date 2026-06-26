@@ -22,7 +22,7 @@ class OllamaClient(BaseLLMClient):
                 }
             ],
             options={
-                "temperature": self.temperature,
+                "temperature": self.temperature, 
             },
         )
 

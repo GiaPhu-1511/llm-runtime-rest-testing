@@ -1,0 +1,108 @@
+operation_uid,baseline_expected_status,baseline_actual_status,feedback_expected_status,feedback_actual_status,feedback_success,test_intent,response_body_preview,failure_reason
+sendgrid_GET_mail_settings_forward_bounce,200,401,200,403,False,positive,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_GET_scopes,200,401,401,401,True,negative,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",
+sendgrid_POST_senders_sender_id_resend_verification,204,401,204,401,False,positive,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",Unauthorized (401)
+spotify_DELETE_playlists_playlist_id_tracks,,401,401,401,True,negative,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",
+sendgrid_POST_validations_email,200,401,200,403,False,positive,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_GET_campaigns_campaign_id_schedules,200,401,200,401,False,positive,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",Unauthorized (401)
+sendgrid_GET_marketing_contacts,200,401,200,401,False,positive,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",Unauthorized (401)
+sendgrid_GET_sso_integrations_integration_id_certificates,200,403,401,403,False,negative,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+spotify_GET_me_following_contains,,401,200,401,False,positive,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",Unauthorized (401)
+spotify_GET_browse_categories_category_id_playlists,200,401,200,401,False,positive,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",Unauthorized (401)
+sendgrid_DELETE_templates_template_id_versions_version_id,204,401,401,403,False,negative,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_DELETE_campaigns_campaign_id_schedules,204,401,401,401,True,negative,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",
+spotify_GET_albums_id,200,401,200,401,False,positive,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",Unauthorized (401)
+spotify_GET_me_shows,200,401,200,401,False,positive,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",Unauthorized (401)
+sendgrid_DELETE_senders_sender_id,204,401,401,401,True,negative,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",
+sendgrid_GET_whitelabel_domains_subuser,200,403,401,403,False,negative/authentication,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_DELETE_ips_warmup_ip_address,204,401,401,403,False,negative,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+spotify_DELETE_me_shows,200,401,401,401,True,negative,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",
+spotify_PUT_me_player_play,,401,401,401,True,negative,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",
+sendgrid_PUT_ips_pools_pool_name,200,401,401,401,True,negative,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",
+spotify_GET_shows_id_episodes,200,401,200,401,False,positive,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",Unauthorized (401)
+sendgrid_POST_marketing_contacts_batch,200,401,401,401,True,negative/authentication,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",
+spotify_PUT_me_player,204,401,401,401,True,negative,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",
+spotify_GET_browse_categories_category_id,200,401,200,401,False,positive,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",Unauthorized (401)
+sendgrid_PATCH_user_webhooks_event_settings_signed,200,401,401,401,True,negative,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",
+spotify_GET_me_episodes_contains,200,401,200,401,False,positive,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",Unauthorized (401)
+sendgrid_GET_marketing_lists_id,200,401,200,401,False,positive,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",Unauthorized (401)
+spotify_GET_recommendations_available_genre_seeds,200,401,200,401,False,positive,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",Unauthorized (401)
+sendgrid_DELETE_suppression_invalid_emails,204,401,401,401,True,negative,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",
+sendgrid_GET_whitelabel_domains_domain_id,200,403,401,403,False,negative,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_GET_api_keys_api_key_id,200,401,401,401,True,negative,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",
+sendgrid_DELETE_teammates_username,204,401,204,403,False,positive,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_GET_partner_settings_new_relic,200,401,200,403,False,positive,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_POST_messages_download,202,401,202,401,False,positive,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",Unauthorized (401)
+sendgrid_GET_subusers_reputations,200,401,200,403,False,positive,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_PUT_user_password,200,401,401,401,True,negative,"{""errors"":[{""field"":null,""message"":""authorization required""}]}",
+sendgrid_GET_marketing_contacts_imports_id,200,401,200,401,False,positive,"{""errors"":[{""field"":null,""message"":""unauthorized""}]}",Unauthorized (401)
+sendgrid_GET_stats,200,401,200,403,False,positive,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_DELETE_ips_pools_pool_name,204,401,204,403,False,positive,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+sendgrid_GET_mailbox_providers_stats,200,401,200,403,False,positive,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)
+spotify_DELETE_me_episodes,,401,401,401,True,negative,"{
+  ""error"": {
+    ""status"": 401,
+    ""message"": ""Invalid access token""
+  }
+}",
+sendgrid_GET_ips_pools,200,401,200,403,False,positive,"{""errors"":[{""field"":null,""message"":""access forbidden""}]}",Forbidden (403)

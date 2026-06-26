@@ -42,7 +42,12 @@ Runtime feedback:
 
 Guidelines:
 - Use the runtime feedback to improve the test.
-- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.
+- Preserve the generated request structure, path, parameters, headers, and body unless the runtime feedback clearly shows they are invalid.
+- Only adjust the expected status and test_intent when appropriate.
+- If actual_status is 401, the refined test should expect 401.
+- If actual_status is 403, the refined test should expect 403.
+- If actual_status is another documented status code for this operation, prefer that actual status.
+- Do not hardcode authorization failures to 401; learn from the actual runtime status.
 - Do not invent undocumented paths.
 - Return exactly one JSON object.
 """.strip()

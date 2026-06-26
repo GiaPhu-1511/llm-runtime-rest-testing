@@ -1,0 +1,18 @@
+{
+  "total_cases": 42,
+  "baseline_success_count": 0,
+  "feedback_success_count": 14,
+  "baseline_success_rate": 0.0,
+  "feedback_success_rate": 0.3333333333333333,
+  "improvement_rate": 0.3333333333333333,
+  "average_response_time_baseline": 686.1771428571428,
+  "average_response_time_feedback": 634.6130952380952,
+  "status_code_distribution_baseline": {
+    "401": 39,
+    "403": 3
+  },
+  "status_code_distribution_feedback": {
+    "401": 28,
+    "403": 14
+  }
+}
