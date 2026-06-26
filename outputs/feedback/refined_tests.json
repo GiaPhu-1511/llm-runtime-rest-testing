@@ -1,7 +1,7 @@
 [
   {
     "operation_uid": "sendgrid_GET_mail_settings_forward_bounce",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_mail_settings_forward_bounce\",\n  \"method\": \"GET\",\n  \"path\": \"/mail_settings/forward_bounce\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_mail_settings_forward_bounce\",\n  \"method\": \"GET\",\n  \"path\": \"/mail_settings/forward_bounce\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_mail_settings_forward_bounce\",\n  \"method\": \"GET\",\n  \"path\": \"/mail_settings/forward_bounce\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_mail_settings_forward_bounce\",\n  \"method\": \"GET\",\n  \"path\": \"/mail_settings/forward_bounce\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_mail_settings_forward_bounce",
       "method": "GET",
@@ -11,13 +11,13 @@
         "Authorization": "Bearer YOUR_ACCESS_TOKEN"
       },
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_GET_scopes",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_scopes\",\n  \"method\": \"GET\",\n  \"path\": \"/scopes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_scopes\",\n  \"method\": \"GET\",\n  \"path\": \"/scopes\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_API_KEY_HERE\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_scopes\",\n  \"method\": \"GET\",\n  \"path\": \"/scopes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_scopes\",\n  \"method\": \"GET\",\n  \"path\": \"/scopes\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_API_KEY_HERE\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"unauthorized\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_scopes",
       "method": "GET",
@@ -33,24 +33,23 @@
   },
   {
     "operation_uid": "sendgrid_POST_senders_sender_id_resend_verification",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_senders_sender_id_resend_verification\",\n  \"method\": \"POST\",\n  \"path\": \"/senders/1234567890/resend_verification\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_POST_senders_sender_id_resend_verification\",\n  \"method\": \"POST\",\n  \"path\": \"/senders/1234567890/resend_verification\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_senders_sender_id_resend_verification\",\n  \"method\": \"POST\",\n  \"path\": \"/senders/1234567890/resend_verification\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_POST_senders_sender_id_resend_verification\",\n  \"method\": \"POST\",\n  \"path\": \"/senders/1234567890/resend_verification\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_POST_senders_sender_id_resend_verification",
       "method": "POST",
       "path": "/senders/1234567890/resend_verification",
       "query_params": {},
       "headers": {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+        "Content-Type": "application/json"
       },
       "body": null,
-      "expected_status": 204,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "spotify_DELETE_playlists_playlist_id_tracks",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_DELETE_playlists_playlist_id_tracks\",\n  \"method\": \"DELETE\",\n  \"path\": \"/playlists/12345/tracks\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_DELETE_playlists_playlist_id_tracks\",\n  \"method\": \"DELETE\",\n  \"path\": \"/playlists/12345/tracks\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer your_access_token_here\"\n  },\n  \"body\": {\n    \"tracks\": [\n      {\n        \"uri\": \"spotify:track:67890\"\n      }\n    ]\n  },\n  \"expected_status\": null,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: None\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_DELETE_playlists_playlist_id_tracks\",\n  \"method\": \"DELETE\",\n  \"path\": \"/playlists/12345/tracks\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_DELETE_playlists_playlist_id_tracks\",\n  \"method\": \"DELETE\",\n  \"path\": \"/playlists/12345/tracks\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer your_access_token_here\"\n  },\n  \"body\": {\n    \"tracks\": [\n      \"67890\"\n    ]\n  },\n  \"expected_status\": null,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: None\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_DELETE_playlists_playlist_id_tracks",
       "method": "DELETE",
@@ -66,63 +65,58 @@
   },
   {
     "operation_uid": "sendgrid_POST_validations_email",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_validations_email\",\n  \"method\": \"POST\",\n  \"path\": \"/validations/email\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_POST_validations_email\",\n  \"method\": \"POST\",\n  \"path\": \"/validations/email\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": \"{\\\"email\\\": \\\"test@example.com\\\"}\",\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_validations_email\",\n  \"method\": \"POST\",\n  \"path\": \"/validations/email\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_POST_validations_email\",\n  \"method\": \"POST\",\n  \"path\": \"/validations/email\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": \"{\\\"email\\\": \\\"test@example.com\\\"}\",\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_POST_validations_email",
       "method": "POST",
       "path": "/validations/email",
       "query_params": {},
       "headers": {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+        "Content-Type": "application/json"
       },
       "body": "{\"email\": \"test@example.com\"}",
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_GET_campaigns_campaign_id_schedules",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_campaigns_campaign_id_schedules\",\n  \"method\": \"GET\",\n  \"path\": \"/campaigns/12345/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_campaigns_campaign_id_schedules\",\n  \"method\": \"GET\",\n  \"path\": \"/campaigns/12345/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_campaigns_campaign_id_schedules\",\n  \"method\": \"GET\",\n  \"path\": \"/campaigns/12345/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_campaigns_campaign_id_schedules\",\n  \"method\": \"GET\",\n  \"path\": \"/campaigns/12345/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_campaigns_campaign_id_schedules",
       "method": "GET",
       "path": "/campaigns/12345/schedules",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "error"
     }
   },
   {
     "operation_uid": "sendgrid_GET_marketing_contacts",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_marketing_contacts",
       "method": "GET",
       "path": "/marketing/contacts",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_GET_sso_integrations_integration_id_certificates",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_sso_integrations_integration_id_certificates\",\n  \"method\": \"GET\",\n  \"path\": \"/sso/integrations/12345/certificates\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_sso_integrations_integration_id_certificates\",\n  \"method\": \"GET\",\n  \"path\": \"/sso/integrations/12345/certificates\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer your_access_token_here\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 403\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_sso_integrations_integration_id_certificates\",\n  \"method\": \"GET\",\n  \"path\": \"/sso/integrations/12345/certificates\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_sso_integrations_integration_id_certificates\",\n  \"method\": \"GET\",\n  \"path\": \"/sso/integrations/12345/certificates\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_sso_integrations_integration_id_certificates",
       "method": "GET",
       "path": "/sso/integrations/12345/certificates",
       "query_params": {},
       "headers": {
-        "Authorization": "Bearer your_access_token_here"
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
       },
       "body": null,
       "expected_status": 401,
@@ -131,45 +125,40 @@
   },
   {
     "operation_uid": "spotify_GET_me_following_contains",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_me_following_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/following/contains\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_me_following_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/following/contains\",\n  \"query_params\": {\n    \"type\": \"artist\",\n    \"ids\": [\n      \"6eyWVXQgkx7a9F\",\n      \"3qR8vGKz0jyf1L\"\n    ]\n  },\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: None\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_me_following_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/following/contains\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_me_following_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/following/contains\",\n  \"query_params\": {\n    \"artists\": \"6543210987654321098765432109876543210987,12345678901234567890123456789012\",\n    \"users\": \"user123,user456\"\n  },\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN_HERE\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_GET_me_following_contains",
       "method": "GET",
       "path": "/me/following/contains",
       "query_params": {
-        "type": "artist",
-        "ids": [
-          "6eyWVXQgkx7a9F",
-          "3qR8vGKz0jyf1L"
-        ]
+        "artists": "6543210987654321098765432109876543210987,12345678901234567890123456789012",
+        "users": "user123,user456"
       },
       "headers": {
         "Authorization": "Bearer YOUR_ACCESS_TOKEN_HERE"
       },
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "error"
     }
   },
   {
     "operation_uid": "spotify_GET_browse_categories_category_id_playlists",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id_playlists\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/us-music/playlists\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id_playlists\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/us-music/playlists\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id_playlists\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/hiphop/playlists\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id_playlists\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/hiphop/playlists\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_GET_browse_categories_category_id_playlists",
       "method": "GET",
-      "path": "/browse/categories/us-music/playlists",
+      "path": "/browse/categories/hiphop/playlists",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN_HERE"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "error"
     }
   },
   {
     "operation_uid": "sendgrid_DELETE_templates_template_id_versions_version_id",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_templates_template_id_versions_version_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/templates/1234567890/versions/1\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_templates_template_id_versions_version_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/templates/1234567890/versions/1\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_templates_template_id_versions_version_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/templates/1234567890/versions/1\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_templates_template_id_versions_version_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/templates/1234567890/versions/1\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_DELETE_templates_template_id_versions_version_id",
       "method": "DELETE",
@@ -185,11 +174,11 @@
   },
   {
     "operation_uid": "sendgrid_DELETE_campaigns_campaign_id_schedules",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_campaigns_campaign_id_schedules\",\n  \"method\": \"DELETE\",\n  \"path\": \"/campaigns/12345/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_campaigns_campaign_id_schedules\",\n  \"method\": \"DELETE\",\n  \"path\": \"/campaigns/12345/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_campaigns_campaign_id_schedules\",\n  \"method\": \"DELETE\",\n  \"path\": \"/campaigns/1234567890/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_campaigns_campaign_id_schedules\",\n  \"method\": \"DELETE\",\n  \"path\": \"/campaigns/1234567890/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_DELETE_campaigns_campaign_id_schedules",
       "method": "DELETE",
-      "path": "/campaigns/12345/schedules",
+      "path": "/campaigns/1234567890/schedules",
       "query_params": {},
       "headers": {
         "Authorization": "Bearer YOUR_ACCESS_TOKEN"
@@ -201,43 +190,11 @@
   },
   {
     "operation_uid": "spotify_GET_albums_id",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_albums_id\",\n  \"method\": \"GET\",\n  \"path\": \"/albums/6Mw9ZgD5JGxS\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_albums_id\",\n  \"method\": \"GET\",\n  \"path\": \"/albums/6Mw9ZgD5JGxS\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_albums_id\",\n  \"method\": \"GET\",\n  \"path\": \"/albums/6Mw9ZgD5JGvz\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_albums_id\",\n  \"method\": \"GET\",\n  \"path\": \"/albums/6Mw9ZgD5JGvz\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_GET_albums_id",
       "method": "GET",
-      "path": "/albums/6Mw9ZgD5JGxS",
-      "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN_HERE"
-      },
-      "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
-    }
-  },
-  {
-    "operation_uid": "spotify_GET_me_shows",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_me_shows\",\n  \"method\": \"GET\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_me_shows\",\n  \"method\": \"GET\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
-    "refined_test": {
-      "operation_uid": "spotify_GET_me_shows",
-      "method": "GET",
-      "path": "/me/shows",
-      "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
-      "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
-    }
-  },
-  {
-    "operation_uid": "sendgrid_DELETE_senders_sender_id",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_senders_sender_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/senders/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_senders_sender_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/senders/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
-    "refined_test": {
-      "operation_uid": "sendgrid_DELETE_senders_sender_id",
-      "method": "DELETE",
-      "path": "/senders/12345",
+      "path": "/albums/6Mw9ZgD5JGvz",
       "query_params": {},
       "headers": {
         "Authorization": "Bearer YOUR_ACCESS_TOKEN"
@@ -248,8 +205,38 @@
     }
   },
   {
+    "operation_uid": "spotify_GET_me_shows",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_me_shows\",\n  \"method\": \"GET\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_me_shows\",\n  \"method\": \"GET\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "refined_test": {
+      "operation_uid": "spotify_GET_me_shows",
+      "method": "GET",
+      "path": "/me/shows",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+      },
+      "body": null,
+      "expected_status": 401,
+      "test_intent": "negative"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_DELETE_senders_sender_id",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_senders_sender_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/senders/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_senders_sender_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/senders/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "refined_test": {
+      "operation_uid": "sendgrid_DELETE_senders_sender_id",
+      "method": "DELETE",
+      "path": "/senders/12345",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 401,
+      "test_intent": "negative"
+    }
+  },
+  {
     "operation_uid": "sendgrid_GET_whitelabel_domains_subuser",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_subuser\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/subuser\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_subuser\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/subuser\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 403\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_subuser\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/subuser\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_subuser\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/subuser\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 403\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_whitelabel_domains_subuser",
       "method": "GET",
@@ -259,13 +246,13 @@
         "Authorization": "Bearer YOUR_ACCESS_TOKEN"
       },
       "body": null,
-      "expected_status": 401,
-      "test_intent": "negative/authentication"
+      "expected_status": 403,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_DELETE_ips_warmup_ip_address",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_warmup_ip_address\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/warmup/123.456.789.012\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_warmup_ip_address\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/warmup/123.456.789.012\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_warmup_ip_address\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/warmup/123.456.789.012\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_warmup_ip_address\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/warmup/123.456.789.012\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_DELETE_ips_warmup_ip_address",
       "method": "DELETE",
@@ -281,30 +268,32 @@
   },
   {
     "operation_uid": "spotify_DELETE_me_shows",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_DELETE_me_shows\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_DELETE_me_shows\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer your_access_token_here\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_DELETE_me_shows\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_DELETE_me_shows\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": null,\n  \"expected_status\": [\n    200,\n    401,\n    403,\n    429\n  ],\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: [200, 401, 403, 429]\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_DELETE_me_shows",
       "method": "DELETE",
       "path": "/me/shows",
       "query_params": {},
       "headers": {
-        "Authorization": "Bearer invalid_access_token"
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
       },
       "body": null,
-      "expected_status": 401,
+      "expected_status": [
+        401
+      ],
       "test_intent": "negative"
     }
   },
   {
     "operation_uid": "spotify_PUT_me_player_play",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_PUT_me_player_play\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player/play\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_PUT_me_player_play\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player/play\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": {\n    \"device_id\": \"USER_DEVICE_ID\"\n  },\n  \"expected_status\": null,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: None\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_PUT_me_player_play\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player/play\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_PUT_me_player_play\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player/play\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_PUT_me_player_play",
       "method": "PUT",
       "path": "/me/player/play",
       "query_params": {},
       "headers": {
-        "Authorization": "Bearer INVALID_ACCESS_TOKEN"
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
       },
       "body": null,
       "expected_status": 401,
@@ -313,7 +302,7 @@
   },
   {
     "operation_uid": "sendgrid_PUT_ips_pools_pool_name",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_PUT_ips_pools_pool_name\",\n  \"method\": \"PUT\",\n  \"path\": \"/ips/pools/test_pool\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_PUT_ips_pools_pool_name\",\n  \"method\": \"PUT\",\n  \"path\": \"/ips/pools/test_pool\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": {\n    \"name\": \"updated_test_pool\"\n  },\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_PUT_ips_pools_pool_name\",\n  \"method\": \"PUT\",\n  \"path\": \"/ips/pools/test_pool\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_PUT_ips_pools_pool_name\",\n  \"method\": \"PUT\",\n  \"path\": \"/ips/pools/test_pool\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": \"{\\\"name\\\": \\\"updated_test_pool\\\"}\",\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_PUT_ips_pools_pool_name",
       "method": "PUT",
@@ -322,30 +311,28 @@
       "headers": {
         "Content-Type": "application/json"
       },
-      "body": null,
+      "body": "{\"name\": \"updated_test_pool\"}",
       "expected_status": 401,
-      "test_intent": "negative"
+      "test_intent": "error"
     }
   },
   {
     "operation_uid": "spotify_GET_shows_id_episodes",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_shows_id_episodes\",\n  \"method\": \"GET\",\n  \"path\": \"/shows/1234567890/episodes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_shows_id_episodes\",\n  \"method\": \"GET\",\n  \"path\": \"/shows/1234567890/episodes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_shows_id_episodes\",\n  \"method\": \"GET\",\n  \"path\": \"/shows/1234567890/episodes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_shows_id_episodes\",\n  \"method\": \"GET\",\n  \"path\": \"/shows/1234567890/episodes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_GET_shows_id_episodes",
       "method": "GET",
       "path": "/shows/1234567890/episodes",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN_HERE"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "error"
     }
   },
   {
     "operation_uid": "sendgrid_POST_marketing_contacts_batch",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_marketing_contacts_batch\",\n  \"method\": \"POST\",\n  \"path\": \"/marketing/contacts/batch\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_POST_marketing_contacts_batch\",\n  \"method\": \"POST\",\n  \"path\": \"/marketing/contacts/batch\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": {\n    \"ids\": [\n      \"12345\",\n      \"67890\"\n    ]\n  },\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_marketing_contacts_batch\",\n  \"method\": \"POST\",\n  \"path\": \"/marketing/contacts/batch\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_POST_marketing_contacts_batch\",\n  \"method\": \"POST\",\n  \"path\": \"/marketing/contacts/batch\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": [\n    \"12345\",\n    \"67890\",\n    \"11111\"\n  ],\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_POST_marketing_contacts_batch",
       "method": "POST",
@@ -354,56 +341,50 @@
       "headers": {
         "Content-Type": "application/json"
       },
-      "body": {
-        "ids": [
-          "12345",
-          "67890"
-        ]
-      },
+      "body": [
+        "12345",
+        "67890",
+        "11111"
+      ],
       "expected_status": 401,
-      "test_intent": "negative/authentication"
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "spotify_PUT_me_player",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_PUT_me_player\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_PUT_me_player\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": {\n    \"device_ids\": [\n      \"NEW_DEVICE_ID\"\n    ]\n  },\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_PUT_me_player\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_PUT_me_player\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": {\n    \"device_id\": \"new_device_id_1234567890\"\n  },\n  \"expected_status\": null,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: None\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_PUT_me_player",
       "method": "PUT",
       "path": "/me/player",
       "query_params": {},
       "headers": {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer INVALID_ACCESS_TOKEN"
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
       },
       "body": {
-        "device_ids": [
-          "NEW_DEVICE_ID"
-        ]
+        "device_id": "new_device_id_1234567890"
       },
       "expected_status": 401,
-      "test_intent": "negative"
+      "test_intent": "error"
     }
   },
   {
     "operation_uid": "spotify_GET_browse_categories_category_id",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/us\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/us\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/us\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/us\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_GET_browse_categories_category_id",
       "method": "GET",
       "path": "/browse/categories/us",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN_HERE"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "error"
     }
   },
   {
     "operation_uid": "sendgrid_PATCH_user_webhooks_event_settings_signed",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_PATCH_user_webhooks_event_settings_signed\",\n  \"method\": \"PATCH\",\n  \"path\": \"/user/webhooks/event/settings/signed\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_PATCH_user_webhooks_event_settings_signed\",\n  \"method\": \"PATCH\",\n  \"path\": \"/user/webhooks/event/settings/signed\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": {\n    \"enabled\": true\n  },\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_PATCH_user_webhooks_event_settings_signed\",\n  \"method\": \"PATCH\",\n  \"path\": \"/user/webhooks/event/settings/signed\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_PATCH_user_webhooks_event_settings_signed\",\n  \"method\": \"PATCH\",\n  \"path\": \"/user/webhooks/event/settings/signed\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": {\n    \"enabled\": true\n  },\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_PATCH_user_webhooks_event_settings_signed",
       "method": "PATCH",
@@ -421,59 +402,27 @@
   },
   {
     "operation_uid": "spotify_GET_me_episodes_contains",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_me_episodes_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/episodes/contains\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_me_episodes_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/episodes/contains\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_me_episodes_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/episodes/contains\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_me_episodes_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/episodes/contains\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_GET_me_episodes_contains",
       "method": "GET",
       "path": "/me/episodes/contains",
       "query_params": {},
       "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN_HERE"
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
       },
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "error"
     }
   },
   {
     "operation_uid": "sendgrid_GET_marketing_lists_id",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_lists_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/lists/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_lists_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/lists/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_lists_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/lists/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_lists_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/lists/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_marketing_lists_id",
       "method": "GET",
       "path": "/marketing/lists/12345",
-      "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
-      "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
-    }
-  },
-  {
-    "operation_uid": "spotify_GET_recommendations_available_genre_seeds",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_recommendations_available_genre_seeds\",\n  \"method\": \"GET\",\n  \"path\": \"/recommendations/available-genre-seeds\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_recommendations_available_genre_seeds\",\n  \"method\": \"GET\",\n  \"path\": \"/recommendations/available-genre-seeds\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
-    "refined_test": {
-      "operation_uid": "spotify_GET_recommendations_available_genre_seeds",
-      "method": "GET",
-      "path": "/recommendations/available-genre-seeds",
-      "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN_HERE"
-      },
-      "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
-    }
-  },
-  {
-    "operation_uid": "sendgrid_DELETE_suppression_invalid_emails",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_suppression_invalid_emails\",\n  \"method\": \"DELETE\",\n  \"path\": \"/suppression/invalid_emails\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_suppression_invalid_emails\",\n  \"method\": \"DELETE\",\n  \"path\": \"/suppression/invalid_emails\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": {\n    \"delete_all\": true\n  },\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
-    "refined_test": {
-      "operation_uid": "sendgrid_DELETE_suppression_invalid_emails_negative_auth",
-      "method": "DELETE",
-      "path": "/suppression/invalid_emails",
       "query_params": {},
       "headers": {},
       "body": null,
@@ -482,32 +431,60 @@
     }
   },
   {
-    "operation_uid": "sendgrid_GET_whitelabel_domains_domain_id",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_domain_id\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/valid_domain_id\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_domain_id\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/valid_domain_id\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 403\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "operation_uid": "spotify_GET_recommendations_available_genre_seeds",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_recommendations_available_genre_seeds\",\n  \"method\": \"GET\",\n  \"path\": \"/recommendations/available-genre-seeds\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_GET_recommendations_available_genre_seeds\",\n  \"method\": \"GET\",\n  \"path\": \"/recommendations/available-genre-seeds\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"No token provided\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
-      "operation_uid": "sendgrid_GET_whitelabel_domains_domain_id",
+      "operation_uid": "spotify_GET_recommendations_available_genre_seeds",
       "method": "GET",
-      "path": "/whitelabel/domains/valid_domain_id",
+      "path": "/recommendations/available-genre-seeds",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer INVALID_ACCESS_TOKEN"
-      },
+      "headers": {},
       "body": null,
+      "expected_status": 401,
+      "test_intent": "error"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_DELETE_suppression_invalid_emails",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_suppression_invalid_emails\",\n  \"method\": \"DELETE\",\n  \"path\": \"/suppression/invalid_emails\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_suppression_invalid_emails\",\n  \"method\": \"DELETE\",\n  \"path\": \"/suppression/invalid_emails\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": {\n    \"delete_all\": true\n  },\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "refined_test": {
+      "operation_uid": "sendgrid_DELETE_suppression_invalid_emails",
+      "method": "DELETE",
+      "path": "/suppression/invalid_emails",
+      "query_params": {},
+      "headers": {},
+      "body": {
+        "delete_all": true
+      },
       "expected_status": 401,
       "test_intent": "negative"
     }
   },
   {
+    "operation_uid": "sendgrid_GET_whitelabel_domains_domain_id",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_domain_id\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/example.com\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_domain_id\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/example.com\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer YOUR_ACCESS_TOKEN\"\n  },\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 403\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "refined_test": {
+      "operation_uid": "sendgrid_GET_whitelabel_domains_domain_id",
+      "method": "GET",
+      "path": "/whitelabel/domains/example.com",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+      },
+      "body": null,
+      "expected_status": 403,
+      "test_intent": "negative"
+    }
+  },
+  {
     "operation_uid": "sendgrid_GET_api_keys_api_key_id",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_api_keys_api_key_id\",\n  \"method\": \"GET\",\n  \"path\": \"/api_keys/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_api_keys_api_key_id\",\n  \"method\": \"GET\",\n  \"path\": \"/api_keys/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_api_keys_api_key_id\",\n  \"method\": \"GET\",\n  \"path\": \"/api_keys/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_api_keys_api_key_id\",\n  \"method\": \"GET\",\n  \"path\": \"/api_keys/12345\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_api_keys_api_key_id",
       "method": "GET",
       "path": "/api_keys/12345",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
+      "headers": {},
       "body": null,
       "expected_status": 401,
       "test_intent": "negative"
@@ -515,23 +492,23 @@
   },
   {
     "operation_uid": "sendgrid_DELETE_teammates_username",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_teammates_username\",\n  \"method\": \"DELETE\",\n  \"path\": \"/teammates/johndoe\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_teammates_username\",\n  \"method\": \"DELETE\",\n  \"path\": \"/teammates/johndoe\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_teammates_username\",\n  \"method\": \"DELETE\",\n  \"path\": \"/teammates/johndoe\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_teammates_username\",\n  \"method\": \"DELETE\",\n  \"path\": \"/teammates/johndoe\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer your_access_token\"\n  },\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 403\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"access forbidden\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_DELETE_teammates_username",
       "method": "DELETE",
       "path": "/teammates/johndoe",
       "query_params": {},
       "headers": {
-        "Authorization": "Bearer your_access_token_here"
+        "Authorization": "Bearer your_access_token"
       },
       "body": null,
-      "expected_status": 204,
-      "test_intent": "positive"
+      "expected_status": 403,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_GET_partner_settings_new_relic",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_partner_settings_new_relic\",\n  \"method\": \"GET\",\n  \"path\": \"/partner_settings/new_relic\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_partner_settings_new_relic\",\n  \"method\": \"GET\",\n  \"path\": \"/partner_settings/new_relic\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_partner_settings_new_relic\",\n  \"method\": \"GET\",\n  \"path\": \"/partner_settings/new_relic\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_partner_settings_new_relic\",\n  \"method\": \"GET\",\n  \"path\": \"/partner_settings/new_relic\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_partner_settings_new_relic",
       "method": "GET",
@@ -541,29 +518,31 @@
         "Authorization": "Bearer YOUR_ACCESS_TOKEN"
       },
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_POST_messages_download",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_messages_download\",\n  \"method\": \"POST\",\n  \"path\": \"/messages/download\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_POST_messages_download\",\n  \"method\": \"POST\",\n  \"path\": \"/messages/download\",\n  \"query_params\": {\n    \"limit\": \"1000000\"\n  },\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 202,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 202\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_messages_download\",\n  \"method\": \"POST\",\n  \"path\": \"/messages/download\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_POST_messages_download\",\n  \"method\": \"POST\",\n  \"path\": \"/messages/download\",\n  \"query_params\": {\n    \"limit\": \"1000000\"\n  },\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 202,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 202\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_POST_messages_download",
       "method": "POST",
       "path": "/messages/download",
-      "query_params": {},
+      "query_params": {
+        "limit": "1000000"
+      },
       "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN_HERE"
       },
       "body": null,
-      "expected_status": 202,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_GET_subusers_reputations",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_subusers_reputations\",\n  \"method\": \"GET\",\n  \"path\": \"/subusers/reputations\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_subusers_reputations\",\n  \"method\": \"GET\",\n  \"path\": \"/subusers/reputations\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_subusers_reputations\",\n  \"method\": \"GET\",\n  \"path\": \"/subusers/reputations\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_subusers_reputations\",\n  \"method\": \"GET\",\n  \"path\": \"/subusers/reputations\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_subusers_reputations",
       "method": "GET",
@@ -573,13 +552,13 @@
         "Authorization": "Bearer YOUR_ACCESS_TOKEN"
       },
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_PUT_user_password",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_PUT_user_password\",\n  \"method\": \"PUT\",\n  \"path\": \"/user/password\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_PUT_user_password\",\n  \"method\": \"PUT\",\n  \"path\": \"/user/password\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": \"{\\\"current_password\\\": \\\"oldPassword123\\\", \\\"new_password\\\": \\\"newSecurePass456\\\"}\",\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_PUT_user_password\",\n  \"method\": \"PUT\",\n  \"path\": \"/user/password\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_PUT_user_password\",\n  \"method\": \"PUT\",\n  \"path\": \"/user/password\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": \"{\\\"current_password\\\": \\\"oldPassword123\\\", \\\"new_password\\\": \\\"newSecurePassword\\\"}\",\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_PUT_user_password",
       "method": "PUT",
@@ -588,85 +567,77 @@
       "headers": {
         "Content-Type": "application/json"
       },
-      "body": "{\"current_password\": \"oldPassword123\", \"new_password\": \"newSecurePass456\"}",
+      "body": "{\"current_password\": \"oldPassword123\", \"new_password\": \"newSecurePassword\"}",
       "expected_status": 401,
       "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_GET_marketing_contacts_imports_id",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts_imports_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts/imports/{id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts_imports_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts/imports/{id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts_imports_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts/imports/{id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts_imports_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts/imports/{id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_marketing_contacts_imports_id",
       "method": "GET",
       "path": "/marketing/contacts/imports/{id}",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_GET_stats",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_stats",
       "method": "GET",
       "path": "/stats",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_DELETE_ips_pools_pool_name",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_pools_pool_name\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/pools/test_pool\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_pools_pool_name\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/pools/test_pool\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_pools_pool_name\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/pools/test_pool\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_pools_pool_name\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/pools/test_pool\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 204,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 204\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_DELETE_ips_pools_pool_name",
       "method": "DELETE",
       "path": "/ips/pools/test_pool",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 204,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "sendgrid_GET_mailbox_providers_stats",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_mailbox_providers_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/mailbox_providers/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_mailbox_providers_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/mailbox_providers/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_mailbox_providers_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/mailbox_providers/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_mailbox_providers_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/mailbox_providers/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_mailbox_providers_stats",
       "method": "GET",
       "path": "/mailbox_providers/stats",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "negative"
     }
   },
   {
     "operation_uid": "spotify_DELETE_me_episodes",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_DELETE_me_episodes\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/episodes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_DELETE_me_episodes\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/episodes\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer your_access_token_here\"\n  },\n  \"body\": [\n    {\n      \"episode_id\": \"1234567890abcdef12345678\"\n    }\n  ],\n  \"expected_status\": null,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: None\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_DELETE_me_episodes\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/episodes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"spotify_DELETE_me_episodes\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/episodes\",\n  \"query_params\": {},\n  \"headers\": {\n    \"Authorization\": \"Bearer your_access_token_here\"\n  },\n  \"body\": [\n    {\n      \"episode_id\": \"1234567890abcdef12345678\"\n    }\n  ],\n  \"expected_status\": null,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: None\n- Actual status: 401\n- Response body: {\n  \"error\": {\n    \"status\": 401,\n    \"message\": \"Invalid access token\"\n  }\n}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "spotify_DELETE_me_episodes",
       "method": "DELETE",
       "path": "/me/episodes",
       "query_params": {},
       "headers": {
-        "Authorization": "Bearer invalid_access_token"
+        "Authorization": "Bearer your_access_token_here"
       },
       "body": null,
       "expected_status": 401,
@@ -675,18 +646,16 @@
   },
   {
     "operation_uid": "sendgrid_GET_ips_pools",
-    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_ips_pools\",\n  \"method\": \"GET\",\n  \"path\": \"/ips/pools\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_ips_pools\",\n  \"method\": \"GET\",\n  \"path\": \"/ips/pools\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- If the server requires authorization, generate a negative/authentication test and set expected_status to 401.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "feedback_prompt": "You are an expert REST API tester.\n\nA previous LLM-generated REST API test was executed and produced runtime feedback.\n\nYour task:\nGenerate ONE improved REST API test request for the same operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_ips_pools\",\n  \"method\": \"GET\",\n  \"path\": \"/ips/pools\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOriginal generated test:\n{\n  \"operation_uid\": \"sendgrid_GET_ips_pools\",\n  \"method\": \"GET\",\n  \"path\": \"/ips/pools\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": 200,\n  \"test_intent\": \"positive\"\n}\n\nRuntime feedback:\n- Expected status: 200\n- Actual status: 401\n- Response body: {\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}\n- Error: None\n\nGuidelines:\n- Use the runtime feedback to improve the test.\n- The runtime execution result is the ground truth.\n- You MUST update expected_status to exactly match the observed actual_status unless there is strong evidence that the runtime failed unexpectedly.\n- Preserve method, path, parameters and body whenever possible.\n- Only modify:\n  - expected_status\n  - test_intent\n  - headers (if authentication is needed)\n- Do NOT keep the previous expected_status if it contradicts runtime feedback.\n- If actual_status is 401, the refined test should expect 401.\n- If actual_status is 403, the refined test should expect 403.\n- If actual_status is another documented status code for this operation, prefer that actual status.\n- Do not hardcode authorization failures to 401; learn from the actual runtime status.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
     "refined_test": {
       "operation_uid": "sendgrid_GET_ips_pools",
       "method": "GET",
       "path": "/ips/pools",
       "query_params": {},
-      "headers": {
-        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
-      },
+      "headers": {},
       "body": null,
-      "expected_status": 200,
-      "test_intent": "positive"
+      "expected_status": 401,
+      "test_intent": "error"
     }
   }
 ]
