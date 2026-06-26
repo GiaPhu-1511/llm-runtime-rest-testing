@@ -21,7 +21,9 @@
       "method": "GET",
       "path": "/scopes",
       "query_params": {},
-      "headers": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY_HERE"
+      },
       "body": null,
       "expected_status": 200,
       "test_intent": "positive"
@@ -33,11 +35,621 @@
     "generated_test": {
       "operation_uid": "sendgrid_POST_senders_sender_id_resend_verification",
       "method": "POST",
-      "path": "/senders/12345/resend_verification",
+      "path": "/senders/1234567890/resend_verification",
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": null,
+      "expected_status": 204,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_DELETE_playlists_playlist_id_tracks",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_DELETE_playlists_playlist_id_tracks\",\n  \"method\": \"DELETE\",\n  \"path\": \"/playlists/{playlist_id}/tracks\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: DELETE\n- Path: /playlists/{playlist_id}/tracks\n- Operation ID: remove-tracks-playlist\n- Summary: Remove Playlist Items\n\n- Description: Remove one or more items from a user's playlist.\n\n- Number of parameters: 1\n- Has request body: True\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_DELETE_playlists_playlist_id_tracks",
+      "method": "DELETE",
+      "path": "/playlists/12345/tracks",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer your_access_token_here"
+      },
+      "body": {
+        "tracks": [
+          {
+            "uri": "spotify:track:67890"
+          }
+        ]
+      },
+      "expected_status": null,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_POST_validations_email",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_validations_email\",\n  \"method\": \"POST\",\n  \"path\": \"/validations/email\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: POST\n- Path: /validations/email\n- Operation ID: POST_validations-email\n- Summary: Validate an email\n- Description: **This endpoint allows you to validate an email address.**\n- Number of parameters: 0\n- Has request body: True\n- Documented response codes: 200\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_POST_validations_email",
+      "method": "POST",
+      "path": "/validations/email",
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\"email\": \"test@example.com\"}",
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_campaigns_campaign_id_schedules",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_campaigns_campaign_id_schedules\",\n  \"method\": \"GET\",\n  \"path\": \"/campaigns/{campaign_id}/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /campaigns/{campaign_id}/schedules\n- Operation ID: GET_campaigns-campaign_id-schedules\n- Summary: View Scheduled Time of a Campaign\n- Description: **This endpoint allows you to retrieve the date and time that a campaign has been scheduled to be sent.**\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 200|404\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_campaigns_campaign_id_schedules",
+      "method": "GET",
+      "path": "/campaigns/12345/schedules",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_marketing_contacts",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /marketing/contacts\n- Operation ID: GET_mc-contats\n- Summary: Get Sample Contacts\n- Description: **This endpoint will return up to 50 of the most recent contacts uploaded or attached to a list**. \n\nThis list will then be sorted by email address.\n\nThe full contact count is also returned.\n\nPlease note that pagination of the contacts has been deprecated.\n\nTwilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.\n- Number of parameters: 0\n- Has request body: False\n- Documented response codes: 200|400|401|403|404|500\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_marketing_contacts",
+      "method": "GET",
+      "path": "/marketing/contacts",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_sso_integrations_integration_id_certificates",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_sso_integrations_integration_id_certificates\",\n  \"method\": \"GET\",\n  \"path\": \"/sso/integrations/{integration_id}/certificates\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /sso/integrations/{integration_id}/certificates\n- Operation ID: GET_sso-integrations-integration_id-certificates\n- Summary: Get All SSO Certificates by Integration\n- Description: **This endpoint allows you to retrieve all your IdP configurations by configuration ID.**\n\nThe `integration_id` expected by this endpoint is the `id` returned in the response by the \"Get All SSO Integrations\" endpoint.\n- Number of parameters: 0\n- Has request body: False\n- Documented response codes: 200|400|401|403|429|500\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_sso_integrations_integration_id_certificates",
+      "method": "GET",
+      "path": "/sso/integrations/12345/certificates",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer your_access_token_here"
+      },
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_GET_me_following_contains",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_me_following_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/following/contains\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: GET\n- Path: /me/following/contains\n- Operation ID: check-current-user-follows\n- Summary: Check If User Follows Artists or Users\n\n- Description: Check to see if the current user is following one or more artists or other Spotify users.\n\n- Number of parameters: 2\n- Has request body: False\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_GET_me_following_contains",
+      "method": "GET",
+      "path": "/me/following/contains",
+      "query_params": {
+        "type": "artist",
+        "ids": [
+          "6eyWVXQgkx7a9F",
+          "3qR8vGKz0jyf1L"
+        ]
+      },
+      "headers": {},
+      "body": null,
+      "expected_status": null,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_GET_browse_categories_category_id_playlists",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id_playlists\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/{category_id}/playlists\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: GET\n- Path: /browse/categories/{category_id}/playlists\n- Operation ID: get-a-categories-playlists\n- Summary: Get Category's Playlists\n\n- Description: Get a list of Spotify playlists tagged with a particular category.\n\n- Number of parameters: 4\n- Has request body: False\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_GET_browse_categories_category_id_playlists",
+      "method": "GET",
+      "path": "/browse/categories/us-music/playlists",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_DELETE_templates_template_id_versions_version_id",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_templates_template_id_versions_version_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/templates/{template_id}/versions/{version_id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: DELETE\n- Path: /templates/{template_id}/versions/{version_id}\n- Operation ID: DELETE_templates-template_id-versions-version_id\n- Summary: Delete a transactional template version.\n- Description: **This endpoint allows you to delete a transactional template version.**\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 204\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_DELETE_templates_template_id_versions_version_id",
+      "method": "DELETE",
+      "path": "/templates/1234567890/versions/1",
       "query_params": {},
       "headers": {},
       "body": null,
       "expected_status": 204,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_DELETE_campaigns_campaign_id_schedules",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_campaigns_campaign_id_schedules\",\n  \"method\": \"DELETE\",\n  \"path\": \"/campaigns/{campaign_id}/schedules\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: DELETE\n- Path: /campaigns/{campaign_id}/schedules\n- Operation ID: DELETE_campaigns-campaign_id-schedules\n- Summary: Unschedule a Scheduled Campaign\n- Description: **This endpoint allows you to unschedule a campaign that has already been scheduled to be sent.**\n\nA successful unschedule will return a 204.\nIf the specified campaign is in the process of being sent, the only option is to cancel (a different method).\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 204|403|404\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_DELETE_campaigns_campaign_id_schedules",
+      "method": "DELETE",
+      "path": "/campaigns/12345/schedules",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 204,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_GET_albums_id",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_albums_id\",\n  \"method\": \"GET\",\n  \"path\": \"/albums/{id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: GET\n- Path: /albums/{id}\n- Operation ID: get-an-album\n- Summary: Get Album\n\n- Description: Get Spotify catalog information for a single album.\n\n- Number of parameters: 2\n- Has request body: False\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_GET_albums_id",
+      "method": "GET",
+      "path": "/albums/6Mw9ZgD5JGxS",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_GET_me_shows",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_me_shows\",\n  \"method\": \"GET\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: GET\n- Path: /me/shows\n- Operation ID: get-users-saved-shows\n- Summary: Get User's Saved Shows\n\n- Description: Get a list of shows saved in the current Spotify user's library. Optional parameters can be used to limit the number of shows returned.\n\n- Number of parameters: 2\n- Has request body: False\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_GET_me_shows",
+      "method": "GET",
+      "path": "/me/shows",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_DELETE_senders_sender_id",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_senders_sender_id\",\n  \"method\": \"DELETE\",\n  \"path\": \"/senders/{sender_id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: DELETE\n- Path: /senders/{sender_id}\n- Operation ID: DELETE_v3-senders-sender_id\n- Summary: Delete a Sender Identity\n- Description: **This endoint allows you to delete one of your sender identities.**\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 204|403|404\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_DELETE_senders_sender_id",
+      "method": "DELETE",
+      "path": "/senders/12345",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 204,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_whitelabel_domains_subuser",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_subuser\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/subuser\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /whitelabel/domains/subuser\n- Operation ID: GET_whitelabel-domains-subuser\n- Summary: List the authenticated domain associated with the given user.\n- Description: **This endpoint allows you to retrieve all of the authenticated domains that have been assigned to a specific subuser.**\n\nAuthenticated domains can be associated with (i.e. assigned to) subusers from a parent account. This functionality allows subusers to send mail using their parent's domain authentication. To associate an authenticated domain with a subuser, the parent account must first authenticate and validate the domain. The parent may then associate the authenticated domain via the subuser management tools.\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 200\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_whitelabel_domains_subuser",
+      "method": "GET",
+      "path": "/whitelabel/domains/subuser",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+      },
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_DELETE_ips_warmup_ip_address",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_warmup_ip_address\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/warmup/{ip_address}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: DELETE\n- Path: /ips/warmup/{ip_address}\n- Operation ID: DELETE_ips-warmup-ip_address\n- Summary: Stop warming up an IP address\n- Description: **This endpoint allows you to remove an IP address from warmup mode.**\n\nYour request will return a 204 status code if the specified IP was successfully removed from warmup mode. To retrieve details of the IP’s warmup status *before* removing it from warmup mode, call the  \"Retrieve the warmpup status for a specific IP address\" endpoint.\n- Number of parameters: 0\n- Has request body: False\n- Documented response codes: 204|404\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_DELETE_ips_warmup_ip_address",
+      "method": "DELETE",
+      "path": "/ips/warmup/123.456.789.012",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 204,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_DELETE_me_shows",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_DELETE_me_shows\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/shows\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: DELETE\n- Path: /me/shows\n- Operation ID: remove-shows-user\n- Summary: Remove User's Saved Shows\n\n- Description: Delete one or more shows from current Spotify user's library.\n\n- Number of parameters: 2\n- Has request body: False\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_DELETE_me_shows",
+      "method": "DELETE",
+      "path": "/me/shows",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer your_access_token_here"
+      },
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_PUT_me_player_play",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_PUT_me_player_play\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player/play\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: PUT\n- Path: /me/player/play\n- Operation ID: start-a-users-playback\n- Summary: Start/Resume Playback\n\n- Description: Start a new context or resume current playback on the user's active device.\n\n- Number of parameters: 1\n- Has request body: True\n- Documented response codes: 204|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_PUT_me_player_play",
+      "method": "PUT",
+      "path": "/me/player/play",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+      },
+      "body": {
+        "device_id": "USER_DEVICE_ID"
+      },
+      "expected_status": null,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_PUT_ips_pools_pool_name",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_PUT_ips_pools_pool_name\",\n  \"method\": \"PUT\",\n  \"path\": \"/ips/pools/{pool_name}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: PUT\n- Path: /ips/pools/{pool_name}\n- Operation ID: PUT_ips-pools-pool_name\n- Summary: Rename an IP pool\n- Description: **This endpoint allows you to update the name of an IP pool.**\n- Number of parameters: 0\n- Has request body: True\n- Documented response codes: 200|404\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_PUT_ips_pools_pool_name",
+      "method": "PUT",
+      "path": "/ips/pools/test_pool",
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "name": "updated_test_pool"
+      },
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_GET_shows_id_episodes",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_shows_id_episodes\",\n  \"method\": \"GET\",\n  \"path\": \"/shows/{id}/episodes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: GET\n- Path: /shows/{id}/episodes\n- Operation ID: get-a-shows-episodes\n- Summary: Get Show Episodes\n\n- Description: Get Spotify catalog information about an show’s episodes. Optional parameters can be used to limit the number of episodes returned.\n\n- Number of parameters: 4\n- Has request body: False\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_GET_shows_id_episodes",
+      "method": "GET",
+      "path": "/shows/1234567890/episodes",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_POST_marketing_contacts_batch",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_marketing_contacts_batch\",\n  \"method\": \"POST\",\n  \"path\": \"/marketing/contacts/batch\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: POST\n- Path: /marketing/contacts/batch\n- Operation ID: POST_marketing-contacts-batch\n- Summary: Get Batched Contacts by IDs\n- Description: **This endpoint is used to retrieve a set of contacts identified by their IDs.**\n\nThis can be more efficient endpoint to get contacts than making a series of individual `GET` requests to the \"Get a Contact by ID\" endpoint.\n\nYou can supply up to 100 IDs. Pass them into the `ids` field in your request body as an array or one or more strings.\n\nTwilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.\n- Number of parameters: 0\n- Has request body: True\n- Documented response codes: 200|401|403|404|500\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_POST_marketing_contacts_batch",
+      "method": "POST",
+      "path": "/marketing/contacts/batch",
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "ids": [
+          "12345",
+          "67890"
+        ]
+      },
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_PUT_me_player",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_PUT_me_player\",\n  \"method\": \"PUT\",\n  \"path\": \"/me/player\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: PUT\n- Path: /me/player\n- Operation ID: transfer-a-users-playback\n- Summary: Transfer Playback\n\n- Description: Transfer playback to a new device and determine if it should start playing.\n\n- Number of parameters: 0\n- Has request body: True\n- Documented response codes: 204|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_PUT_me_player",
+      "method": "PUT",
+      "path": "/me/player",
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+      },
+      "body": {
+        "device_ids": [
+          "NEW_DEVICE_ID"
+        ]
+      },
+      "expected_status": 204,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_GET_browse_categories_category_id",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_browse_categories_category_id\",\n  \"method\": \"GET\",\n  \"path\": \"/browse/categories/{category_id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: GET\n- Path: /browse/categories/{category_id}\n- Operation ID: get-a-category\n- Summary: Get Single Browse Category\n\n- Description: Get a single category used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).\n\n- Number of parameters: 3\n- Has request body: False\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_GET_browse_categories_category_id",
+      "method": "GET",
+      "path": "/browse/categories/us",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_PATCH_user_webhooks_event_settings_signed",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_PATCH_user_webhooks_event_settings_signed\",\n  \"method\": \"PATCH\",\n  \"path\": \"/user/webhooks/event/settings/signed\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: PATCH\n- Path: /user/webhooks/event/settings/signed\n- Operation ID: PATCH_user-webhooks-event-settings-signed\n- Summary: Enable/Disable Signed Webhook\n- Description: **This endpoint allows you to enable or disable signing of the Event Webhook.**\n\nThis endpoint takes a single boolean request parameter, `enabled`. You may either enable or disable signing of the Event Webhook using this endpoint. Once enabled, you can retrieve your public key using the `/webhooks/event/settings/signed` endpoint.\n\nFor more information about cryptographically signing the Event Webhook, see [Getting Started with the Event Webhook Security Features](https://sendgrid.com/docs/for-developers/tracking-events/getting-started-event-webhook-security-features).\n- Number of parameters: 1\n- Has request body: True\n- Documented response codes: 200|400|401|500\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_PATCH_user_webhooks_event_settings_signed",
+      "method": "PATCH",
+      "path": "/user/webhooks/event/settings/signed",
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "enabled": true
+      },
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_GET_me_episodes_contains",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_me_episodes_contains\",\n  \"method\": \"GET\",\n  \"path\": \"/me/episodes/contains\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: GET\n- Path: /me/episodes/contains\n- Operation ID: check-users-saved-episodes\n- Summary: Check User's Saved Episodes\n\n- Description: Check if one or more episodes is already saved in the current Spotify user's 'Your Episodes' library.\n\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_GET_me_episodes_contains",
+      "method": "GET",
+      "path": "/me/episodes/contains",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_marketing_lists_id",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_lists_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/lists/{id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /marketing/lists/{id}\n- Operation ID: GET_mc-lists-id\n- Summary: Get a List by ID\n- Description: **This endpoint returns data about a specific list.**\n\nSetting the optional parameter `contact_sample=true` returns the `contact_sample` in the response body. Up to fifty of the most recent contacts uploaded or attached to a list will be returned, sorted alphabetically, by email address.\n\nThe full contact count is also returned.\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 200|404\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_marketing_lists_id",
+      "method": "GET",
+      "path": "/marketing/lists/12345",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_GET_recommendations_available_genre_seeds",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_GET_recommendations_available_genre_seeds\",\n  \"method\": \"GET\",\n  \"path\": \"/recommendations/available-genre-seeds\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: GET\n- Path: /recommendations/available-genre-seeds\n- Operation ID: get-recommendation-genres\n- Summary: Get Available Genre Seeds\n\n- Description: Retrieve a list of available genres seed parameter values for [recommendations](/documentation/web-api/reference/#/operations/get-recommendations).\n\n- Number of parameters: 0\n- Has request body: False\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_GET_recommendations_available_genre_seeds",
+      "method": "GET",
+      "path": "/recommendations/available-genre-seeds",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_DELETE_suppression_invalid_emails",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_suppression_invalid_emails\",\n  \"method\": \"DELETE\",\n  \"path\": \"/suppression/invalid_emails\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: DELETE\n- Path: /suppression/invalid_emails\n- Operation ID: DELETE_suppression-invalid_emails\n- Summary: Delete invalid emails\n- Description: **This endpoint allows you to remove email addresses from your invalid email address list.**\n\nThere are two options for deleting invalid email addresses: \n\n1) You can delete all invalid email addresses by setting `delete_all` to true in the request body.\n2) You can delete some invalid email addresses by specifying certain addresses in an array in the request body.\n- Number of parameters: 1\n- Has request body: True\n- Documented response codes: 204\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_DELETE_suppression_invalid_emails",
+      "method": "DELETE",
+      "path": "/suppression/invalid_emails",
+      "query_params": {},
+      "headers": {},
+      "body": {
+        "delete_all": true
+      },
+      "expected_status": 204,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_whitelabel_domains_domain_id",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_whitelabel_domains_domain_id\",\n  \"method\": \"GET\",\n  \"path\": \"/whitelabel/domains/{domain_id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /whitelabel/domains/{domain_id}\n- Operation ID: GET_whitelabel-domains-domain_id\n- Summary: Retrieve an authenticated domain\n- Description: **This endpoint allows you to retrieve a specific authenticated domain.**\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 200\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_whitelabel_domains_domain_id",
+      "method": "GET",
+      "path": "/whitelabel/domains/valid_domain_id",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+      },
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_api_keys_api_key_id",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_api_keys_api_key_id\",\n  \"method\": \"GET\",\n  \"path\": \"/api_keys/{api_key_id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /api_keys/{api_key_id}\n- Operation ID: GET_api_keys-api_key_id\n- Summary: Retrieve an existing API Key\n- Description: **This endpoint allows you to retrieve a single API key using an `api_key_id`.**\n\nThe endpoint will return a key's name, ID, and scopes. If the API Key ID does not, exist a `404` status will be returned.\n\nSee the [API Key Permissions List](https://sendgrid.api-docs.io/v3.0/how-to-use-the-sendgrid-v3-api/api-authorization) for all available scopes. An API key's scopes can be updated after creation using the \"Update API keys\" endpoint.\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 200|400|401|403|404|500\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_api_keys_api_key_id",
+      "method": "GET",
+      "path": "/api_keys/12345",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_DELETE_teammates_username",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_teammates_username\",\n  \"method\": \"DELETE\",\n  \"path\": \"/teammates/{username}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: DELETE\n- Path: /teammates/{username}\n- Operation ID: DELETE_v3-teammates-username\n- Summary: Delete teammate\n- Description: **This endpoint allows you to delete a teammate.**\n\n**Only the parent user or an admin teammate can delete another teammate.**\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 204|404\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_DELETE_teammates_username",
+      "method": "DELETE",
+      "path": "/teammates/johndoe",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 204,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_partner_settings_new_relic",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_partner_settings_new_relic\",\n  \"method\": \"GET\",\n  \"path\": \"/partner_settings/new_relic\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /partner_settings/new_relic\n- Operation ID: GET_partner_settings-new_relic\n- Summary: Returns all New Relic partner settings.\n- Description: **This endpoint allows you to retrieve your current New Relic partner settings.**\n\nOur partner settings allow you to integrate your SendGrid account with our partners to increase your SendGrid experience and functionality. For more information about our partners, and how you can begin integrating with them, please visit our [Partners documentation](https://sendgrid.com/docs/ui/account-and-settings/partners/).\n\nBy integrating with New Relic, you can send your SendGrid email statistics to your New Relic Dashboard. If you enable this setting, your stats will be sent to New Relic every 5 minutes. You will need your New Relic License Key to enable this setting. For more information, please see our [SendGrid for New Relic documentation](https://sendgrid.com/docs/ui/analytics-and-reporting/tracking-stats-using-new-relic/).\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 200\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_partner_settings_new_relic",
+      "method": "GET",
+      "path": "/partner_settings/new_relic",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_POST_messages_download",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_POST_messages_download\",\n  \"method\": \"POST\",\n  \"path\": \"/messages/download\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: POST\n- Path: /messages/download\n- Operation ID: POST_v3-messages-download\n- Summary: Request CSV\n- Description: This is BETA functionality. You may not have access, and we reserve the right to change functionality without notice.\n\nThis request will kick off a backend process to generate a CSV file. Once generated, the worker will then send an email for the user download the file. The link will expire in 3 days.\n\nThe CSV fill contain the last 1 million messages. This endpoint will be rate limited to 1 request every 12 hours (rate limit may change).\n\nThis endpoint is similar to the GET Single Message endpoint - the only difference is that /download is added to indicate that this is a CSV download requests but the same query is used to determine what the CSV should contain.\n- Number of parameters: 2\n- Has request body: False\n- Documented response codes: 202|400|429|500\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_POST_messages_download",
+      "method": "POST",
+      "path": "/messages/download",
+      "query_params": {
+        "limit": "1000000"
+      },
+      "headers": {},
+      "body": null,
+      "expected_status": 202,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_subusers_reputations",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_subusers_reputations\",\n  \"method\": \"GET\",\n  \"path\": \"/subusers/reputations\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /subusers/reputations\n- Operation ID: GET_subusers-reputations\n- Summary: Retrieve Subuser Reputations\n- Description: **This endpoint allows you to request the reputations for your subusers.**\n\nSubuser sender reputations give a good idea how well a sender is doing with regards to how recipients and recipient servers react to the mail that is being received. When a bounce, spam report, or other negative action happens on a sent email, it will affect your sender rating.\n- Number of parameters: 1\n- Has request body: False\n- Documented response codes: 200\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_subusers_reputations",
+      "method": "GET",
+      "path": "/subusers/reputations",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_PUT_user_password",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_PUT_user_password\",\n  \"method\": \"PUT\",\n  \"path\": \"/user/password\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: PUT\n- Path: /user/password\n- Operation ID: PUT_user-password\n- Summary: Update your password\n- Description: **This endpoint allows you to update your password.**\n- Number of parameters: 1\n- Has request body: True\n- Documented response codes: 200\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_PUT_user_password",
+      "method": "PUT",
+      "path": "/user/password",
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\"current_password\": \"oldPassword123\", \"new_password\": \"newSecurePass456\"}",
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_marketing_contacts_imports_id",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_marketing_contacts_imports_id\",\n  \"method\": \"GET\",\n  \"path\": \"/marketing/contacts/imports/{id}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /marketing/contacts/imports/{id}\n- Operation ID: GET_marketing-contacts-imports-id\n- Summary: Import Contacts Status\n- Description: **This endpoint can be used to check the status of a contact import job**. \n\nUse the `job_id` from the \"Import Contacts,\" \"Add or Update a Contact,\" or \"Delete Contacts\" endpoints as the `id` in the path parameter.\n\nIf there is an error with your `PUT` request, download the `errors_url` file and open it to view more details.\n\nThe job `status` field indicates whether the job is `pending`, `completed`, `errored`, or `failed`. \n\nPending means not started. Completed means finished without any errors. Errored means finished with some errors. Failed means finshed with all errors, or the job was entirely unprocessable: for example, if you attempt to import file format we do not support.\n\nThe `results` object will have fields depending on the job type.\n\nTwilio SendGrid recommends exporting your contacts regularly as a backup to avoid issues or lost data.\n- Number of parameters: 0\n- Has request body: False\n- Documented response codes: 200|400|401|403|404|500\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_marketing_contacts_imports_id",
+      "method": "GET",
+      "path": "/marketing/contacts/imports/{id}",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_stats",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /stats\n- Operation ID: GET_stats\n- Summary: Retrieve global email statistics\n- Description: **This endpoint allows you to retrieve all of your global email statistics between a given date range.**\n\nParent accounts will see aggregated stats for their account and all subuser accounts. Subuser accounts will only see their own stats.\n- Number of parameters: 6\n- Has request body: False\n- Documented response codes: 200\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_stats",
+      "method": "GET",
+      "path": "/stats",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_DELETE_ips_pools_pool_name",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_DELETE_ips_pools_pool_name\",\n  \"method\": \"DELETE\",\n  \"path\": \"/ips/pools/{pool_name}\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: DELETE\n- Path: /ips/pools/{pool_name}\n- Operation ID: DELETE_ips-pools-pool_name\n- Summary: Delete an IP pool\n- Description: **This endpoint allows you to delete an IP pool.**\n- Number of parameters: 0\n- Has request body: False\n- Documented response codes: 204|404\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_DELETE_ips_pools_pool_name",
+      "method": "DELETE",
+      "path": "/ips/pools/test_pool",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 204,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_mailbox_providers_stats",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_mailbox_providers_stats\",\n  \"method\": \"GET\",\n  \"path\": \"/mailbox_providers/stats\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /mailbox_providers/stats\n- Operation ID: GET_mailbox_providers-stats\n- Summary: Retrieve email statistics by mailbox provider.\n- Description: **This endpoint allows you to retrieve your email statistics segmented by recipient mailbox provider.**\n\n**We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.\n\nAdvanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).\n- Number of parameters: 7\n- Has request body: False\n- Documented response codes: 200\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_mailbox_providers_stats",
+      "method": "GET",
+      "path": "/mailbox_providers/stats",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "spotify_DELETE_me_episodes",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"spotify_DELETE_me_episodes\",\n  \"method\": \"DELETE\",\n  \"path\": \"/me/episodes\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: spotify\n- Method: DELETE\n- Path: /me/episodes\n- Operation ID: remove-episodes-user\n- Summary: Remove User's Saved Episodes\n\n- Description: Remove one or more episodes from the current user's library.\n\n- Number of parameters: 1\n- Has request body: True\n- Documented response codes: 200|401|403|429\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "spotify_DELETE_me_episodes",
+      "method": "DELETE",
+      "path": "/me/episodes",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer your_access_token_here"
+      },
+      "body": [
+        {
+          "episode_id": "1234567890abcdef12345678"
+        }
+      ],
+      "expected_status": null,
+      "test_intent": "positive"
+    }
+  },
+  {
+    "operation_uid": "sendgrid_GET_ips_pools",
+    "prompt": "You are an expert REST API tester.\n\nGenerate ONE executable REST API test request for the following OpenAPI operation.\n\nReturn ONLY valid JSON. Do not include markdown.\n\nRequired JSON format:\n{\n  \"operation_uid\": \"sendgrid_GET_ips_pools\",\n  \"method\": \"GET\",\n  \"path\": \"/ips/pools\",\n  \"query_params\": {},\n  \"headers\": {},\n  \"body\": null,\n  \"expected_status\": null,\n  \"test_intent\": \"positive | negative | boundary | error\"\n}\n\nOperation:\n- API name: sendgrid\n- Method: GET\n- Path: /ips/pools\n- Operation ID: GET_ips-pools\n- Summary: Retrieve all IP pools\n- Description: **This endpoint allows you to get all of your IP pools.**\n- Number of parameters: 0\n- Has request body: False\n- Documented response codes: 200\n\nGuidelines:\n- Use realistic values when possible.\n- Cover edge cases or error codes if the operation description suggests them.\n- Do not invent undocumented paths.\n- Return exactly one JSON object.",
+    "generated_test": {
+      "operation_uid": "sendgrid_GET_ips_pools",
+      "method": "GET",
+      "path": "/ips/pools",
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
       "test_intent": "positive"
     }
   }

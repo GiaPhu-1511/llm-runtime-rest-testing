@@ -5,8 +5,8 @@ experiment_dataset_size: 208
 pilot_ratio: 0.20
 
 llm:
-  provider: gemini
-  model: gemini-2.5-flash
+  provider: ollama
+  model: qwen2.5:7b
   temperature: 0.0
   max_output_tokens: 2048
 

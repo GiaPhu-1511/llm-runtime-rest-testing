@@ -14,7 +14,7 @@ def main():
     llm = get_llm_client()
     results = []
 
-    for item in prompts[:3]:
+    for item in prompts:
         uid = item["operation_uid"]
         print(f"Refining: {uid}")
 
