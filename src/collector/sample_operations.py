@@ -2,33 +2,14 @@ import csv
 import random
 from pathlib import Path
 
-CONFIG_FILE = Path("config/experiment.yaml")
+from src.config_loader import load_config
+
 RAW_DIR = Path("datasets/raw")
 PILOT_DIR = Path("datasets/pilot")
 
 INPUT_FILE = RAW_DIR / "operations_all.csv"
 EXPERIMENT_FILE = RAW_DIR / "operations.csv"
 PILOT_FILE = PILOT_DIR / "pilot_operations.csv"
-
-
-def load_config() -> dict:
-    config = {}
-
-    for line in CONFIG_FILE.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-
-        key, value = line.split(":", 1)
-        key = key.strip()
-        value = value.strip()
-
-        if "." in value:
-            config[key] = float(value)
-        else:
-            config[key] = int(value)
-
-    return config
 
 
 def read_csv(path: Path) -> list[dict]:

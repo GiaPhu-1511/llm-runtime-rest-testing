@@ -41,7 +41,7 @@ Guidelines:
 
 
 if __name__ == "__main__":
-    from data_loader import load_operations
+    from src.data_loader import load_operations
 
     ops = load_operations("datasets/pilot/pilot_operations.csv")
     prompt = build_baseline_prompt(ops[0])
